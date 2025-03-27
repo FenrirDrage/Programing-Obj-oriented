@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="image.png" alt="image" width="400" height="200">    
+
+    <h2>
+        Gestão de Jogos
+    </h2>
+    <form id="gameForm">
+        <label>Nome do jogo> <input type="text" id="gname" required></label><br>
+        <label>Ano de Lançamento <input type="number" id="year" min="1900" max="2025" required></label><br>
+        <label>Genero <input type="text" id="genrer" required></label><br>
+        <label>Plataforma:
+            <select id="platform" multiple required>
+                <option value="PC">PC</option>
+                <option value="PS4">PS4</option>
+                <option value="Xbox">Xbox</option>
+                <option value="Switch">Switch</option>
+            </select>
+        </label><br>
+        <label>Nota <input type="number" id="score" min="1" max="10" required></label>
+        <button type="submit">Add Jogo</button>
+    </form>
+
+    <h3>
+        Lista de Jogos
+    </h3>
+    <label>Filtrar por Genero: <input type="text" id="filterGenrer"></label>
+    <label>Filtrar por Plataforma: <input type="text" id="filterPlatform"></label>
+    <label>Filtrar por Nota: <input type="number" id="filterScore" min="1" max="10"></label>
+    <button onclick="filterGames()" id="filterButton">Filtrar</button>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Ano</th>
+                <th>Genero</th>
+                <th>Plataforma</th>
+                <th>Nota</th>
+                <th>Remover</th>
+            </tr>
+        </thead>
+        <tbody id="gameList">
+        </tbody>
+    </table>
+    
+    
+    <script src="index.js"></script>
+</body>
+</html>
